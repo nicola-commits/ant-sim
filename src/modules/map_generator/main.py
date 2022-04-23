@@ -1,11 +1,11 @@
 #import libraries
+# sourcery skip: merge-nested-ifs
 import contextlib
 import itertools
 import pygame as pg
 import time
 from Line import bresenham
 from Pixel import pixel
-import os
 
 #global variables
 BLACK = (0, 0, 0)
@@ -15,6 +15,7 @@ last = 0
 erasersize = 16
 lasteraser = (0, 0)
 screenshot = False
+foodcoor = False
 
 
 #create a screen
@@ -32,6 +33,10 @@ while True:
         #if the user wants to quit, quit
         if event.type == pg.QUIT:
             quit()
+
+        if event.type == pg.KEYDOWN:
+            if event.key == pg.K_q:
+                foodcoor = pg.mouse.get_pos()
 
         #check for mouse clicks
         #using the function
@@ -86,12 +91,14 @@ while True:
     #draw the pixels
     for p in pixels:
         p.draw(screen)
+    
+    if foodcoor:
+        pg.draw.circle(screen, (0, 255, 0), (foodcoor[0], foodcoor[1]), 1)
 
     if screenshot:
         pg.image.save(screen,"screenshot.jpg")
 
     pg.display.update()
-    os.system('cls' if os.name == 'nt' else 'clear')
-    print(len(pixels))
+    #os.system('cls' if os.name == 'nt' else 'clear')
 
     
