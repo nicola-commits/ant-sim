@@ -19,7 +19,7 @@ foodcoor = False
 
 
 #create a screen
-screen = pg.display.set_mode((1000, 1000))
+screen = pg.display.set_mode((200, 200))
 
 #create a clock
 clock = pg.time.Clock()

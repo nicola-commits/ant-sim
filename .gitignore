@@ -2,8 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.jpg
-*.jpeg
 
 # C extensions
 *.so
@@ -52,6 +50,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+screenshot.jpg
 
 # Translations
 *.mo
