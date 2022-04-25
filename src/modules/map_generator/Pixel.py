@@ -9,7 +9,7 @@ class pixel:
 
     def draw(self, sc:pg.display, color=(255, 255, 255)):
         #draw a circle of radius 2 to represent one pixel in our map
-        pg.draw.circle(sc, color, (self.x, self.y), 2)
+        pg.draw.circle(sc, color, (self.x, self.y), 1)
 
     def __repr__(self) -> str:
         return f"self.x = {self.x}; self.y = {self.y}"
